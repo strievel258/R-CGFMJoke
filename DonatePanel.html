@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roy and Colleen's Travel Dreams Donors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f8fa;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .donation-panel {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 350px;
+      padding: 20px;
+	  position: relative
+    }
+
+    .donation-panel h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .goal-amount {
+      color: #555;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .progress-bar-container {
+      background-color: #e0e0e0;
+      border-radius: 30px;
+      overflow: hidden;
+      height: 16px;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar-fill {
+      background-color: #00b964;
+      width: 65%; /* Adjust based on actual % raised */
+      height: 100%;
+      border-radius: 30px;
+    }
+
+    .progress-text {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .donate-button {
+      background-color: #00b964;
+      color: white;
+      text-align: center;
+      display: block;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-bottom: 15px;
+    }
+
+    .donate-button:hover {
+      background-color: #029e54;
+    }
+
+    .donation-stats {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .share-buttons {
+      margin-top: 20px;
+    }
+
+    .share-buttons button {
+      background-color: #eee;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 5px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .share-buttons button:hover {
+      background-color: #ddd;
+    }
+
+    .recent-donations {
+      margin-top: 30px;
+    }
+
+    .donor {
+      border-top: 1px solid #eee;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+
+    .donor-name {
+      font-weight: bold;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .donor-amount {
+      font-size: 14px;
+      color: #00b964;
+      float: right;
+    }
+
+    .donor-time {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .donor-comment {
+      font-size: 13px;
+      color: #444;
+      margin-top: 5px;
+    }
+	
+	.circle-progress {
+      width: 80px;
+      height: 80px;
+	}
+
+ 	
+	.circle {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #e6e6e6;
+      position: relative;
+	}
+
+	.circle .mask,
+	.circle .fill {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 50%;
+	}
+
+   .circle .mask {
+	  clip: rect(0px, 120px, 120px, 60px);
+	}	
+
+	.circle .mask.full,
+	  .circle .fill {
+	  background-color: #00b964;
+	  animation: fill-rotate 1s linear forwards;
+	}
+
+	.circle .mask.half {
+	  clip: rect(0px, 60px, 120px, 0px);
+	  background-color: #00b964;
+	}
+
+	.circle .inside-circle {
+	  width: 85%;
+	  height: 85%;
+	  border-radius: 50%;
+	  background: #fff;
+	  position: absolute;
+	  top: 7.5%;
+	  left: 7.5%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  font-weight: bold;
+	  font-size: 20px;
+	  color: #333;
+	   box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+	}
+	
+	.progress-circle-container {
+	  position: absolute;
+	  top: 20px;
+	  right: 20px;
+	}
+
+
+	/* Keyframe for rotation fill effect */
+	  @keyframes fill-rotate {
+	  0% {
+	    transform: rotate(0deg);
+	  }
+	  100% {
+        transform: rotate(234deg); /* 65% of 360deg = 234deg */
+	  }
+	}
+
+	
+  </style>
+</head>
+<body>
+
+  <div class="donation-panel">
+    <h2>$6,500 raised</h2>
+    <div class="goal-amount">of $10,000 goal</div>
+
+    <div class="progress-bar-container">
+      <div class="progress-bar-fill"></div>
+    </div>
+
+    <div class="progress-text">65% funded • 37 donations</div>
+
+    <a href="#" class="donate-button">Donate now</a>
+
+    <div class="donation-stats">
+      <p>Last donation 2h ago</p>
+      <p>Be the next to support!</p>
+    </div>
+
+    <div class="share-buttons">
+      <button>Share</button>
+      <button>Tweet</button>
+    </div>
+
+    <div class="recent-donations">
+      <h3 style="font-size: 16px; margin-top: 20px;">Recent Donations</h3>
+
+      <div class="donor">
+        <span class="donor-name">Scott and Laurie</span>
+        <span class="donor-amount">$1</span>
+        <div class="donor-time">2 hours ago</div>
+        <div class="donor-comment">We're cheap. This is all we can give you. </div>
+      </div>
+
+      <div class="donor">
+        <span class="donor-name">Anonymous</span>
+        <span class="donor-amount">$50</span>
+        <div class="donor-time">5 hours ago</div>
+      </div>
+
+      <div class="donor">
+        <span class="donor-name">Larry and Debbie</span>
+        <span class="donor-amount">$10</span>
+        <div class="donor-time">1 day ago</div>
+        <div class="donor-comment">We know what you are experiencing. We are also retired. 😢</div>
+      </div>
+	  
+	<div class="donor">
+       <span class="donor-name">Mike and Lisa</span>
+       <span class="donor-amount">$200</span>
+       <div class="donor-time">2 days ago</div>
+       <div class="donor-comment">Let's get you some money so we can explore the world! 🌍</div>
+    </div>
+	
+
+	<div class="progress-circle-container">
+      <div class="circle-progress">
+        <div class="circle">
+          <div class="mask full"></div>
+          <div class="mask half"></div>
+          <div class="inside-circle">65%</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+</body>
+</html>

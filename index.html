@@ -222,8 +222,8 @@
     }
 	
 	.circle-progress {
-      width: 80px;
-      height: 80px;
+      width: 100%;
+      height: 100%;
 	}
 
  	
@@ -277,8 +277,10 @@
 	
 	.progress-circle-container {
 	  position: absolute;
-	  top: 20px;
-	  right: 20px;
+	  top: 1rem;
+	  right: 1rem;
+	  width:80px;
+	  height: 80px;
 	}
 	
 	.page-wrapper {
@@ -312,18 +314,31 @@
 	  }
 	}	
 	
+	.full-width-header {
+	  width: 100vw;
+	  overflow: hidden;
+	 }
+	
+	.full-width-header img {
+	  width: 100%;
+	  height: 100%;
+      display: block;
+	  max-width: 100%
+	}
+	
 	
   </style>
 </head>
 <body>
-<div class="campaign-image">
-      <img src="GFMHeader.png" style="width: 68%; height: auto;" class="center-image">
-    </div>
+<div class="full-width-header">
+    <img src="GFMHeader.png" alt="Header" />
+  </div>
+  
 <div class = "page-wrapper">
 
   <div class="container">
-  
-    <div class="campaign-header">
+    	
+	<div class="campaign-header">
       <h1>Help Roy and Colleen Realize Their Travel Dreams</h1>
       <p class="organizer">Organized by Barbara Trievel</p>
     </div>
@@ -385,15 +400,9 @@
       <p>Be the next to support!</p>
     </div>
 
-    <div class="share-buttons">
-      <button>Share</button>
-      <button>Tweet</button>
-    </div>
-
     <div class="recent-donations">
       <h3 style="font-size: 16px; margin-top: 20px;">Recent Donations</h3>
-
-   
+  
 
       <div class="donor">
         <span class="donor-name">Terry & Char</span>
